@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+
+@each $screen-size, $property in $type-scale {
+    @if $screen-size == small {
+        @each $prop, $value in $property {
+            .fs-#{$prop} {
+                font-size: $value;
+            }
+        }
+    } @else {
+        @include mq(small) {
+            @each $prop, $value in $property {
+                .fs-#{$prop} {
+                    font-size: $value;
+                }
+            }
+        }
+    }
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+    letter-spacing: 2.35px;
+}

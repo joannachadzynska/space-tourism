@@ -1,5 +1,5 @@
 const App = () => (
-    <div>
+    <div className='bg-example text-white '>
         <header>
             <h1>hi</h1>
         </header>

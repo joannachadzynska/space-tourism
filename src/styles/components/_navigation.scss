@@ -15,8 +15,11 @@
         }
     }
 }
+
 .underline-indicators > * {
+    border: 0;
     border-bottom: 0.2rem solid scale-color($white, $alpha: -100%);
+    cursor: pointer;
     padding: var(--underline-gap, 1rem) 0;
 
     &.active {
@@ -26,5 +29,55 @@
     &:hover,
     &:focus {
         border-color: scale-color($white, $alpha: -50%);
+    }
+}
+
+.tab-list {
+    --gap: 2rem;
+
+    & [aria-selected="true"] {
+        border-color: $white;
+        color: $white;
+    }
+}
+
+.dot-indicators > * {
+    border: 0;
+    border-radius: 50%;
+    background-color: scale-color($white, $alpha: -75%);
+    cursor: pointer;
+    aspect-ratio: 1;
+    padding: 0.5em;
+
+    &[aria-selected="true"] {
+        background-color: $white;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: scale-color($white, $alpha: -50%);
+    }
+}
+
+.number-indicators > * {
+    background-color: $dark;
+    border-radius: 50%;
+    border: 1px solid scale-color($white, $alpha: -75%);
+    color: $white;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    height: 5rem;
+
+    &[aria-selected="true"] {
+        background-color: $white;
+        color: $dark;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: $white;
     }
 }

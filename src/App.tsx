@@ -1,8 +1,8 @@
+import { DesignSystem } from "./containers";
+
 const App = () => (
     <div className='ff-serif'>
-        <header>
-            <h1>hi</h1>
-        </header>
+        <DesignSystem />
     </div>
 );
 

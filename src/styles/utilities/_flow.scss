@@ -1,1 +1,4 @@
-
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 3rem);
+    // outline: 1px solid red;
+}

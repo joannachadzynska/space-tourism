@@ -24,3 +24,5 @@ yarn-error.log*
 
 # Design System
 /design
+
+.vscode

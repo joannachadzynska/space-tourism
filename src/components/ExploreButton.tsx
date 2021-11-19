@@ -6,7 +6,7 @@ const ExploreButton: React.FC<ExploreButtonProps> = () => {
         <>
             <a
                 href='#'
-                className='large-button uppercase ff-serif text-dark bg-white fs-600'>
+                className='large-button uppercase ff-serif text-dark bg-white '>
                 Explore
             </a>
 

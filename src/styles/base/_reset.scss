@@ -43,12 +43,13 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
+    overflow: hidden;
 }
 
 #root {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 /* A elements that don't have a class get default styles */

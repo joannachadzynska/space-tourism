@@ -2,17 +2,25 @@
 
 @each $screen-size, $property in $type-scale {
     @if $screen-size == small {
-        @each $prop, $value in $property {
-            .fs-#{$prop} {
-                font-size: $value;
-            }
-        }
-    } @else {
         @include mq(small) {
             @each $prop, $value in $property {
                 .fs-#{$prop} {
                     font-size: $value;
                 }
+            }
+        }
+    } @else if $screen-size == big {
+        @include mq(medium) {
+            @each $prop, $value in $property {
+                .fs-#{$prop} {
+                    font-size: $value;
+                }
+            }
+        }
+    } @else {
+        @each $prop, $value in $property {
+            .fs-#{$prop} {
+                font-size: $value;
             }
         }
     }

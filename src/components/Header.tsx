@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import logo from "../assets/shared/logo.svg";
-import { ROUTES } from "../routing/Routes";
 
 interface HeaderProps {}
 
@@ -11,7 +9,7 @@ const Header: React.FC<HeaderProps> = () => {
                 <img src={logo} alt='space tourism logo' className='logo' />
             </div>
 
-            <nav>
+            {/* <nav>
                 <ul className='primary-navigation underline-indicators ff-sans-cond flex'>
                     <li className='active'>
                         <Link
@@ -46,7 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
                         </Link>
                     </li>
                 </ul>
-            </nav>
+            </nav> */}
         </header>
     );
 };

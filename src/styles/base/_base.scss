@@ -3,6 +3,7 @@
 body {
     background-color: $dark;
     background-repeat: no-repeat;
+    background-position: bottom center;
     background-size: cover;
 
     &.home {
@@ -23,6 +24,7 @@ body {
 
     @include mq(small) {
         &.home {
+            background-position: center center;
             background-image: url(../../assets/home/background-home-tablet.jpg);
         }
 

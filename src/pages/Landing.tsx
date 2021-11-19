@@ -19,8 +19,7 @@ const LandingPage: React.FunctionComponent<LandingPageProps> = () => {
                     a truly out of this world experience!
                 </p>
             </div>
-
-            <div>
+            <div className='btn--container'>
                 <ExploreButton />
             </div>
         </div>

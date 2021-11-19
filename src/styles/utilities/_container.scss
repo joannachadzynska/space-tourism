@@ -51,3 +51,10 @@
 .d-block {
     display: block;
 }
+
+.btn--container {
+    @include mq(small) {
+        margin-left: 8em;
+        margin-bottom: -em;
+    }
+}

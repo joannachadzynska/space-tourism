@@ -4,7 +4,7 @@ interface LandingPageProps {}
 
 const LandingPage: React.FunctionComponent<LandingPageProps> = () => {
     return (
-        <div className='grid-container grid-container--home'>
+        <main id='main' className='grid-container grid-container--home'>
             <div>
                 <h1 className='text-accent uppercase fs-500 ff-sans-cond letter-spacing-1'>
                     So, you want to travel to
@@ -22,7 +22,7 @@ const LandingPage: React.FunctionComponent<LandingPageProps> = () => {
             <div className='btn--container'>
                 <ExploreButton />
             </div>
-        </div>
+        </main>
     );
 };
 

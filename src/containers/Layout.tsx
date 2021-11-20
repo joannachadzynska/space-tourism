@@ -19,6 +19,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
 
     return (
         <>
+            <a href='#main' className='skip-to-content'>
+                Skip to main content
+            </a>
             <Header />
             {children}
         </>

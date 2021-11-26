@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
-import { Header } from "../components";
+import { Outlet, useLocation } from "react-router";
 
 const Layout: React.FunctionComponent = ({ children }) => {
     const location = useLocation();
@@ -18,13 +17,13 @@ const Layout: React.FunctionComponent = ({ children }) => {
     }, [location.pathname, name]);
 
     return (
-        <>
-            <a href='#main' className='skip-to-content'>
-                Skip to main content
-            </a>
-            <Header />
-            {children}
-        </>
+        <main
+            id='main'
+            className={`grid-container-xxx grid-container--${
+                location.pathname === "/" ? "home" : `${name}`
+            }`}>
+            <Outlet />
+        </main>
     );
 };
 

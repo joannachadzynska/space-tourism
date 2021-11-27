@@ -39,6 +39,10 @@
             padding-bottom: max(6rem, 20vh);
             align-items: end;
         }
+
+        &.grid-container--destinations {
+            align-items: start;
+        }
     }
 }
 

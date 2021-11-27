@@ -16,8 +16,8 @@ const DestinationPage: React.FunctionComponent = () => {
 
     return (
         <section>
-            <h2>{data.name}</h2>
-            <p>{data.description}</p>
+            <h2 className='ff-serif uppercase fs-900'>{data.name}</h2>
+            <p className='text-accent fs-300'>{data.description}</p>
         </section>
     );
 };

@@ -19,7 +19,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
     return (
         <main
             id='main'
-            className={`grid-container-xxx grid-container--${
+            className={`grid-container grid-container--${
                 location.pathname === "/" ? "home" : `${name}`
             }`}>
             <Outlet />

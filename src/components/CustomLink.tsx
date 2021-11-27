@@ -1,4 +1,9 @@
-import { Link, LinkProps, useMatch, useResolvedPath } from "react-router-dom";
+import {
+    LinkProps,
+    NavLink,
+    useMatch,
+    useResolvedPath,
+} from "react-router-dom";
 
 const CustomLink: React.FunctionComponent<LinkProps> = ({
     children,
@@ -11,10 +16,10 @@ const CustomLink: React.FunctionComponent<LinkProps> = ({
 
     return (
         <li className={match ? "active" : ""}>
-            <Link className='uppercase text-white letter-spacing-2' to={to}>
+            <NavLink className='uppercase text-white letter-spacing-2' to={to}>
                 <span aria-hidden='true'>{state}</span>
                 {children}
-            </Link>
+            </NavLink>
         </li>
     );
 };

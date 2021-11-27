@@ -15,23 +15,26 @@ const DestinationPage: React.FunctionComponent = () => {
     }, [dest]);
 
     return (
-        <section>
-            <h2 className='ff-serif uppercase fs-900'>{data.name}</h2>
+        <article className='destination-info'>
+            <h2 className='ff-serif uppercase fs-800'>{data.name}</h2>
+
             <p className='text-accent fs-300'>{data.description}</p>
 
-            <div className='details'>
-                <p className='uppercase text-accent ff-sans-cond letter-spacing-2'>
-                    AVG. Distance
-                </p>
-                <h3 className='uppercase ff-serif fs-500'>{data.distance}</h3>
+            <div className='destination-meta flex '>
+                <div className='details'>
+                    <h3 className='fs-400 uppercase text-accent ff-sans-cond letter-spacing-2'>
+                        AVG. Distance
+                    </h3>
+                    <p className='uppercase ff-serif '>{data.distance}</p>
+                </div>
+                <div className='details'>
+                    <h3 className='fs-400 uppercase text-accent ff-sans-cond letter-spacing-2'>
+                        est. travel time
+                    </h3>
+                    <p className='uppercase ff-serif '>{data.travel}</p>
+                </div>
             </div>
-            <div className='details'>
-                <p className='uppercase text-accent ff-sans-cond letter-spacing-2'>
-                    est. travel time
-                </p>
-                <h3 className='uppercase ff-serif fs-500'>{data.travel}</h3>
-            </div>
-        </section>
+        </article>
     );
 };
 

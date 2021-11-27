@@ -1,9 +1,24 @@
-import { useState } from "react";
+// @ts-check
+
+import React, { useRef } from "react";
 import { CustomLink, MobileNavButton } from ".";
 import { ROUTES } from "../routing/Routes";
+import useClickOutside from "../shared/hooks/useOnClickOutside";
 
-const Navigation: React.FunctionComponent = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
+export interface NavigationProps {
+    onClickOutside: () => void;
+    isExpanded: boolean;
+    setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navigation: React.FunctionComponent<NavigationProps> = ({
+    onClickOutside,
+    isExpanded,
+    setIsExpanded,
+}) => {
+    const clickRef = useRef() as React.MutableRefObject<HTMLUListElement>;
+    useClickOutside(clickRef, onClickOutside);
+
     return (
         <>
             <MobileNavButton
@@ -12,6 +27,7 @@ const Navigation: React.FunctionComponent = () => {
             />
             <nav>
                 <ul
+                    ref={clickRef}
                     id='primary-navigation'
                     className='primary-navigation underline-indicators ff-sans-cond flex'
                     data-visible={isExpanded}>

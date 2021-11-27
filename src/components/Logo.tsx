@@ -1,9 +1,10 @@
+import { NavLink } from "react-router-dom";
 import logo from "../assets/shared/logo.svg";
 
 const Logo: React.FunctionComponent = () => (
-    <div>
+    <NavLink to='/'>
         <img src={logo} alt='space tourism logo' className='logo' />
-    </div>
+    </NavLink>
 );
 
 export default Logo;

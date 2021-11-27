@@ -96,8 +96,10 @@
 
 .tab-list {
     --gap: 2rem;
+
     a {
         text-decoration: none;
+        background-color: transparent;
     }
 
     & [aria-selected="true"] {

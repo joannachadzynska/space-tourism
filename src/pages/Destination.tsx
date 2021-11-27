@@ -18,6 +18,19 @@ const DestinationPage: React.FunctionComponent = () => {
         <section>
             <h2 className='ff-serif uppercase fs-900'>{data.name}</h2>
             <p className='text-accent fs-300'>{data.description}</p>
+
+            <div className='details'>
+                <p className='uppercase text-accent ff-sans-cond letter-spacing-2'>
+                    AVG. Distance
+                </p>
+                <h3 className='uppercase ff-serif fs-500'>{data.distance}</h3>
+            </div>
+            <div className='details'>
+                <p className='uppercase text-accent ff-sans-cond letter-spacing-2'>
+                    est. travel time
+                </p>
+                <h3 className='uppercase ff-serif fs-500'>{data.travel}</h3>
+            </div>
         </section>
     );
 };

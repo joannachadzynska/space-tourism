@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAppDispatch } from "./app/hooks";
 import { Header, Layout } from "./containers";
+import crew from "./data/crew.json";
 import destinations from "./data/destinations.json";
+import { getCrewMembers } from "./features/crewSlice";
 import { getDestinations } from "./features/destination/destinationSlice";
 import {
     Crew,
@@ -18,6 +20,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getDestinations(destinations));
+        dispatch(getCrewMembers(crew));
         return () => {};
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

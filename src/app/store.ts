@@ -1,9 +1,11 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import crewReducer from "../features/crewSlice";
 import destinationReducer from "../features/destination/destinationSlice";
 
 export const store = configureStore({
     reducer: {
         destination: destinationReducer,
+        crew: crewReducer,
     },
 });
 

@@ -60,6 +60,9 @@
         &.grid-container--destinations {
             align-items: start;
         }
+        &.grid-container--crew {
+            align-items: start;
+        }
     }
 }
 
@@ -167,5 +170,31 @@
                 }
             }
         }
+    }
+}
+
+.grid-container--crew {
+    --flow-space: 2rem;
+    grid-template-areas:
+        "title"
+        "image"
+        "tabs"
+        "content";
+
+    .numbered-title {
+        grid-area: title;
+    }
+
+    .dot-indicators {
+        grid-area: tabs;
+    }
+
+    img {
+        grid-area: image;
+        max-width: 60%;
+    }
+
+    .crew-details {
+        grid-area: content;
     }
 }

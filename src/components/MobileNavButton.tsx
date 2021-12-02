@@ -1,18 +1,18 @@
 interface MobileNavButtonProps {
-    expanded: boolean;
-    onClick: () => void;
+    isExpanded: boolean;
+    setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const MobileNavButton: React.FunctionComponent<MobileNavButtonProps> = ({
-    expanded,
-    onClick,
+    isExpanded,
+    setIsExpanded,
 }) => {
     return (
         <button
             className='mobile-nav-toggle'
             aria-controls='primary-navigation'
-            aria-expanded={expanded ? "true" : "false"}
-            onClick={onClick}>
+            aria-expanded={isExpanded ? "true" : "false"}
+            onClick={() => setIsExpanded(!isExpanded)}>
             <span className='sr-only'>Menu</span>
         </button>
     );

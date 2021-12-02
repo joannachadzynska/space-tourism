@@ -22,8 +22,8 @@ const Navigation: React.FunctionComponent<NavigationProps> = ({
     return (
         <>
             <MobileNavButton
-                expanded={isExpanded}
-                onClick={() => setIsExpanded(!isExpanded)}
+                isExpanded={isExpanded}
+                setIsExpanded={setIsExpanded}
             />
             <nav>
                 <ul

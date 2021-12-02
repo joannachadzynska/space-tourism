@@ -4,8 +4,11 @@ import { Logo, Navigation } from "../components";
 const Header: React.FunctionComponent = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const clickOutside = () => {
-        setIsExpanded(!isExpanded);
+        if (isExpanded) {
+            setIsExpanded(false);
+        }
     };
+
     return (
         <header className='primary-header flex'>
             <Logo />

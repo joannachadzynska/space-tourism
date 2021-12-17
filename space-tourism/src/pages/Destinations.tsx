@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router";
 import { TabLink } from "../components";
-import { selectDestinations } from "./../features/destination/destinationSlice";
+import { selectDestinations } from "../features/destination/destinationSlice";
 
 const Destinations: React.FunctionComponent = () => {
     const destinations = useSelector(selectDestinations);

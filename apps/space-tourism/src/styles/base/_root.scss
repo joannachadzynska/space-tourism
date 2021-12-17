@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+:root {
+    --section-spacing: 3.5rem;
+    @include mq(medium) {
+        --section-spacing: 7rem;
+    }
+
+    --clr-dark: $dark;
+    --clr-light: $light;
+    --clr-white: $white;
+
+    @each $screen-size, $property in $type-scale {
+        @if $screen-size == small {
+            @include mq(small) {
+                @each $prop, $value in $property {
+                    --fs-#{$prop}: #{$value};
+                }
+            }
+        } @else if $screen-size == big {
+            @include mq(medium) {
+                @each $prop, $value in $property {
+                    --fs-#{$prop}: #{$value};
+                }
+            }
+        } @else {
+            @each $prop, $value in $property {
+                --fs-#{$prop}: #{$value};
+            }
+        }
+    }
+}

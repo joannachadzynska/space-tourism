@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+
+body {
+    font-size: var(--fs-400);
+    font-family: $ff-sans-normal;
+    color: $white;
+    letter-spacing: -0.5px;
+}

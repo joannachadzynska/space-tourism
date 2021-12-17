@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+.large-button {
+    text-decoration: none;
+    display: inline-grid;
+    font-size: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    padding: 0 2em;
+    aspect-ratio: 1;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: scale-color($light, $alpha: -85%);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.5s linear, transform 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}

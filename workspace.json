@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "space-tourism": "apps/space-tourism",
+    "space-tourism-e2e": "apps/space-tourism-e2e"
+  }
+}

@@ -154,6 +154,7 @@
         .tab-list {
             grid-column: 3 / 5;
             grid-row: 1;
+            margin-top: 4rem;
         }
 
         .destination-info {
@@ -237,7 +238,7 @@
             grid-column: 3/ 5;
             grid-row: 1 / 5;
             align-self: end;
-            max-width: 90%;
+            // max-width: 90%;
         }
 
         .dot-indicators {
@@ -267,5 +268,11 @@
         //         }
         //     }
         // }
+    }
+
+    @include mq(big) {
+        img {
+            // grid-row: 1 / 5;
+        }
     }
 }

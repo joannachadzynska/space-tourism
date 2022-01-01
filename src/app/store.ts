@@ -1,11 +1,13 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import crewReducer from "../features/crewSlice";
 import destinationReducer from "../features/destination/destinationSlice";
+import technologyReducer from "../features/technologySlice";
 
 export const store = configureStore({
     reducer: {
         destination: destinationReducer,
         crew: crewReducer,
+        technology: technologyReducer,
     },
 });
 

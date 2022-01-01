@@ -4,15 +4,17 @@ import { useAppDispatch } from "./app/hooks";
 import { Header, Layout } from "./containers";
 import crew from "./data/crew.json";
 import destinations from "./data/destinations.json";
+import technologies from "./data/technology.json";
 import { getCrewMembers } from "./features/crewSlice";
 import { getDestinations } from "./features/destination/destinationSlice";
+import { getTechnologies } from "./features/technologySlice";
 import {
     Crew,
     Destination,
     Destinations,
     Landing,
     Technology,
-    Test,
+    Test
 } from "./pages";
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
     useEffect(() => {
         dispatch(getDestinations(destinations));
         dispatch(getCrewMembers(crew));
+        dispatch(getTechnologies(technologies))
         return () => {};
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

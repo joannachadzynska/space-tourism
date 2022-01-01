@@ -34,7 +34,6 @@
     display: grid;
     text-align: center;
     place-items: center;
-    padding-inline: clamp(1rem, 10vw, 8rem);
     padding-bottom: 4rem;
 
     @include mq(small) {
@@ -54,15 +53,27 @@
 
         &.grid-container--home {
             padding-bottom: max(6rem, 20vh);
+            padding-inline: clamp(1rem, 10vw, 8rem);
             align-items: end;
         }
 
-        &.grid-container--destinations {
-            align-items: start;
-        }
+        &.grid-container--destinations,
         &.grid-container--crew {
             align-items: start;
+            padding-inline: clamp(1rem, 10vw, 8rem);
         }
+
+        &.grid-container--technology {
+            padding-inline: 0;
+        }
+    }
+
+    @include mq(medium) {
+        &.grid-container--technology {
+            padding-inline: clamp(1rem, 10vw, 8rem);
+        }
+
+        position: relative;
     }
 }
 
@@ -269,10 +280,101 @@
         //     }
         // }
     }
+}
+.grid-container--technology {
+    height: 100%;
+    --flow-space: 0rem;
+    overflow: visible;
 
-    @include mq(big) {
+    grid-template-areas:
+        "title"
+        "image"
+        "tabs"
+        "content";
+
+    .numbered-title {
+        grid-area: title;
+    }
+
+    .number-indicators {
+        grid-area: tabs;
+        align-self: center;
+        justify-self: center;
+    }
+
+    img {
+        grid-area: image;
+        height: max-content;
+    }
+
+    .technology-details {
+        grid-area: content;
+        height: 100%;
+        span {
+            text-align: center;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            margin-bottom: clamp(1rem, 10vw, 4rem);
+        }
+
+        p {
+            line-height: 1.8;
+        }
+    }
+
+    @include mq(small) {
+        .numbered-title,
+        img,
+        .number-indicators,
+        .technology-details {
+            grid-column: 1 / 5;
+        }
+
+        .numbered-title {
+            justify-self: start;
+            margin-top: 2rem;
+        }
+
+        .technology-details {
+            text-align: center;
+        }
+    }
+
+    @include mq(medium) {
+        padding-bottom: 0;
+        .numbered-title {
+            grid-column: 1 / 5;
+        }
+
         img {
-            // grid-row: 1 / 5;
+            grid-column: 3/ 5;
+            grid-row: 1 / 5;
+
+            &.portrait-image {
+                position: absolute;
+                right: -8rem;
+                width: 90%;
+            }
+        }
+
+        .number-indicators {
+            grid-column: 1 / 1;
+            grid-row: 2/3;
+            flex-direction: column;
+        }
+
+        .technology-details {
+            grid-column: 2 / 3;
+            grid-row: 2/5;
+            text-align: left;
+            padding-left: 2rem;
+            margin-right: -8rem;
+            span {
+                text-align: left;
+            }
         }
     }
 }
